@@ -5,6 +5,7 @@ import os
 # OpenAI import
 import openai
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
 st.sidebar.write("🔑 API Key set:", "**yes**" if openai.api_key else "**no**")
 
 # Core functions

@@ -39,7 +39,7 @@ st.sidebar.header("Navigation")
 
 mode = st.sidebar.selectbox("Choose action", [
     "Query Variable", "Update Value", "Batch Report", 
-    "Trend Dashboard", "Natural-Language Query"
+    "Trend Dashboard", "Natural-Language Query", "Chat with GTM Agent"
 ])
 
 if mode == "Query Variable":

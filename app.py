@@ -4,10 +4,13 @@ import os
 
 # OpenAI import
 import openai
-openai.api_key = os.getenv("OPENAI_API_KEY")
+if openai.api_key = os.getenv("OPENAI_API_KEY")
 
-st.sidebar.write("🔑 API Key set:", "**yes**" if openai.api_key else "**no**")
-
+	st.sidebar.write("🔑 API Key set:", "**yes**")
+else:
+	st.sidebar.write("🔑 API Key set:", "**no**")
+	st. error("POEN_API_KEY not set. Please add it in Streamlit Secrets.")
+≈
 # Core functions
 from agent_core import get_gtm_variable_details
 

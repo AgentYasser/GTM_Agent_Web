@@ -96,6 +96,33 @@ elif mode == "Natural-Language Query":
             'pipeline': 'Trend_Synthesizer',
             'insight': 'Insight_Generator',
             'alignment': 'Alignment_Tracker'
+            
+elif mode == "Chat with GTM Agent":
+    # Input area for free-text GTM questions
+    prompt = st.text_area("Ask anything about GTM:")
+    # Only show button when there's text
+    if prompt and st.button("Send to AI"):
+        with st.spinner("Thinking…"):
+            resp = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": (
+                            "You are a GTM AI assistant. "
+                            "Context: here are GTM variables and purposes:\n"
+                            f"{json.dumps(gtm_data, indent=2)}"
+                        )
+                    },
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.7,
+                max_tokens=300
+            )
+        answer = resp.choices[0].message.content.strip()
+        st.markdown("**AI Answer:**")
+        st.write(answer)
+
         }
         var = next((v for k, v in keywords.items() if k in query.lower()), None)
         if var:

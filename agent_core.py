@@ -48,7 +48,7 @@ def get_gtm_variable_details(gtm_data, config, runtime, tier, variable_name):
         'Inputs': base.get('Inputs', ''),
         'Example': base.get('Example', ''),
         'Suggested Action': smart_recommendation(variable_name)['Action'],
-        'Team Prompt': smart_recommendation(variable_name')['Prompt'] if variable_name in smart_recommendation(variable_name) else smart_recommendation(variable_name)['Prompt'],  # minor fix
+        'Team Prompt': smart_recommendation(variable_name)['Prompt'],
         'Recommended KPI': smart_recommendation(variable_name)['KPI'],
         'Current Value': runtime.get(tier, {}).get(variable_name, 'No data'),
         'Performance Feedback': performance_feedback(variable_name)

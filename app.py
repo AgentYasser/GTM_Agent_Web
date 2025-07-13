@@ -96,6 +96,7 @@ elif mode == "Natural-Language Query":
             'pipeline': 'Trend_Synthesizer',
             'insight': 'Insight_Generator',
             'alignment': 'Alignment_Tracker'
+            }
             
 elif mode == "Chat with GTM Agent":
     prompt = st.text_area("Ask anything about GTM:")

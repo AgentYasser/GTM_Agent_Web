@@ -2,64 +2,53 @@ import streamlit as st
 import json
 import os
 
-# OpenAI import
-import openai
-if openai.api_key =  os.getenv("OPENAI_API_KEY")
+from transformers import pipeline, Conversation
 
-	st.sidebar.write("🔑 API Key set:", "**yes**")
-else:
-	st.sidebar.write("🔑 API Key set:", "**no**")
-	st. error("POEN_API_KEY not set. Please add it in Streamlit Secrets.")
-
-# Core functions
-from agent_core import get_gtm_variable_details
-
-# Load JSON data
+# ———— Load GTM Data ————
+@st.cache_data
 def load_json(path):
     if os.path.exists(path):
         with open(path) as f:
             return json.load(f)
     return {}
 
-gtm_data = load_json('structured_gtm_variables.json')
-config   = load_json('director_config.json')
-runtime  = load_json('gtm_runtime_data.json')
+gtm_data = load_json("structured_gtm_variables.json")
+tiers = list(gtm_data.keys())
 
-# Page setup
-st.set_page_config(page_title="GTM AI Agent - Chat First", layout="centered")
-st.title("📊 GTM AI Agent")
+# ———— Sidebar: Tier & Variable Selection ————
+st.sidebar.header("GTM AI Agent")
+selected_tier = st.sidebar.selectbox("Select Tier", tiers)
+vars_in_tier = list(gtm_data.get(selected_tier, {}).keys())
+selected_var = st.sidebar.selectbox("Select Variable", vars_in_tier)
 
-# Chat-first UI
-st.header("💬 Chat with GTM Agent")
-prompt = st.text_area("Ask anything about GTM:", height=150)
-if st.button("Send to AI"):
-    if not openai.api_key:
-st.sidebar.write("🔑 API Key set:", "**yes**" if openai.api_key else "**no**")        st.error("OPENAI_API_KEY not set. Please add it in Streamlit Secrets.")
-    else:
-        with st.spinner("Thinking..."):
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": (
-                        "You are a GTM AI assistant. Here are the GTM variables and their purposes:" +
-                        json.dumps(gtm_data, indent=2)
-                    )},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.7,
-                max_tokens=300
-            )
-        answer = response.choices[0].message.content
-        st.markdown("**AI Answer:**")
-        st.write(answer)
+if st.sidebar.button("Show Definition"):
+    info = gtm_data[selected_tier][selected_var]
+    st.sidebar.markdown(f"**Purpose:** {info['Purpose']}")
+    st.sidebar.markdown(f"**Inputs:** {info['Inputs']}")
+    st.sidebar.markdown(f"**Example:** {info['Example']}")
 
-st.markdown("---")
-# Tier-based Query below
-st.header("🔍 Query by Tier & Variable")
-tier = st.selectbox("Select Tier", list(gtm_data.keys()))
-variable = st.selectbox("Select Variable", list(gtm_data.get(tier, {})))
-if st.button("Get Recommendation"):
-    res = get_gtm_variable_details(gtm_data, config, runtime, tier, variable)
-    st.json(res)
+# ———— Initialize Chat Model ————
+@st.cache_resource(show_spinner=False)
+def get_chatbot():
+    return pipeline(
+        "conversational",
+        model="microsoft/DialoGPT-medium",
+        device=-1
+    )
 
-st.sidebar.info("Use the chat above or query by selecting a tier and variable.")
+chatbot = get_chatbot()
+
+# ———— Main Area: Chat Interface ————
+st.title("💬 GTM AI Agent")
+user_query = st.text_input("Ask anything about GTM…")
+
+if st.button("Send to AI") and user_query:
+    conv = Conversation(user_query)
+    conv = chatbot(conv)
+    reply = conv.generated_responses[-1]
+    st.markdown(f"**AI Answer:** {reply}")
+
+# ———— Show Current Runtime Value ————
+runtime = load_json("gtm_runtime_data.json")
+current_val = runtime.get(selected_tier, {}).get(selected_var, "No data")
+st.info(f"Current value for **{selected_var}**: {current_val}")

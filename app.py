@@ -102,24 +102,23 @@ elif mode == "Chat with GTM Agent":
     prompt = st.text_area("Ask anything about GTM:")
     if prompt and st.button("Send to AI"):
         with st.spinner("Thinking…"):
-            resp = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {
-                        "role": "system",
-                        "content": (
-                            "You are a GTM AI assistant. "
-                            "Context: GTM variables and purposes:\n"
-                            + json.dumps(gtm_data, indent=2)
-                        )
-                    },
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.7,
-                max_tokens=300
+            # Build a single prompt combining context + user question
+            system_context = (
+                "You are a GTM AI assistant. "
+                "Here are the GTM variables and their purposes:\n"
+                + json.dumps(gtm_data, indent=2)
+                + "\n\n"
             )
-        answer = resp.choices[0].message.content.strip()
+            full_prompt = system_context + "User asks: " + prompt
+
+            # Use the older Completion endpoint
+            resp = openai.Completion.create(
+                engine="text-davinci-003",
+                prompt=full_prompt,
+                max_tokens=300,
+                temperature=0.7,
+            )
+            answer = resp.choices[0].text.strip()
+
         st.markdown("**AI Answer:**")
         st.write(answer)
-
-

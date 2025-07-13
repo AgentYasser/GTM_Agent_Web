@@ -1,0 +1,145 @@
+{
+    "Tier_1A_Individual_Empowerment": {
+        "Role_Specific_Functions": {
+            "Purpose": "Defines tasks based on individual GTM responsibilities",
+            "Inputs": "Current job title, team functions, and daily tasks",
+            "Example": "Shows exact outputs expected from each team member"
+        },
+        "Interdependency_Map": {
+            "Purpose": "Maps dependencies to understand collaboration dynamics",
+            "Inputs": "Regular collaborators and their roles",
+            "Example": "Identifies blockers or dependencies clearly"
+        },
+        "Performance_Boosters": {
+            "Purpose": "Identifies workflow optimizations",
+            "Inputs": "Tasks slowing down the workflow",
+            "Example": "Shows workflows that can be optimized across team"
+        },
+        "Alignment_Tracker": {
+            "Purpose": "Checks alignment of work with campaign goals",
+            "Inputs": "Current campaign or project goals",
+            "Example": "Highlights deviation in messaging"
+        },
+        "Insight_Generator": {
+            "Purpose": "Surfaces meaningful patterns from user\u2019s work",
+            "Inputs": "Samples of recent work (campaigns, reports, etc.)",
+            "Example": "Collects content-specific insights clearly"
+        },
+        "Cross_Pollination_Engine": {
+            "Purpose": "Shares useful patterns or ideas between team members",
+            "Inputs": "Departments or teams regularly collaborated with",
+            "Example": "Transfers effective ideas from one team to another"
+        },
+        "Meeting_Intelligence": {
+            "Purpose": "Summarizes what matters to each user",
+            "Inputs": "Meeting preparation methods and critical details",
+            "Example": "Provides condensed, role-relevant meeting summaries"
+        },
+        "Documentation_Assistant": {
+            "Purpose": "Automatically captures rationale behind decisions",
+            "Inputs": "Types of documents regularly created or consumed",
+            "Example": "Logs decision-making rationale clearly"
+        },
+        "Feedback_Loop_Enabler": {
+            "Purpose": "Promotes work culture transparency",
+            "Inputs": "Preferred method of feedback reception",
+            "Example": "Simplifies collection of feedback clearly"
+        }
+    },
+    "Tier_1B_Behavioral_Calibration": {
+        "Working_Style_Profile": {
+            "Purpose": "Identifies how the user works best",
+            "Inputs": "Typical planning and structuring of workflow",
+            "Example": "Assign tasks based on user\u2019s optimal working style"
+        },
+        "Communication_Style": {
+            "Purpose": "Adapts feedback and updates to preferred format",
+            "Inputs": "Preferred communication modes",
+            "Example": "Customizes communication clearly"
+        },
+        "Motivational_Drivers": {
+            "Purpose": "Understands what keeps team members engaged",
+            "Inputs": "Factors enhancing engagement and productivity",
+            "Example": "Retains high performers through tailored motivation"
+        },
+        "Stress_Signals": {
+            "Purpose": "Detects early signs of burnout",
+            "Inputs": "Typical stress behaviors or feelings",
+            "Example": "Flags morale or emotional changes clearly"
+        },
+        "Decision_Making_Approach": {
+            "Purpose": "Adapts suggestions to match decision-making process",
+            "Inputs": "Reliance on data, instinct, or team input",
+            "Example": "Matches decision recommendations to user style"
+        },
+        "Autonomy_Preference": {
+            "Purpose": "Balances hands-on vs. hands-off support",
+            "Inputs": "Preference for detail vs. autonomy",
+            "Example": "Informs director\u2019s delegation clearly"
+        }
+    },
+    "Tier_2_Director_Insight_Optimization": {
+        "Strategic_Alignment_Index": {
+            "Purpose": "Measures alignment of outputs with strategy",
+            "Inputs": "List of goals or KPIs",
+            "Example": "Quantifies team\u2019s strategic alignment clearly"
+        },
+        "Output_Quality_Score": {
+            "Purpose": "Rates deliverables against quality criteria",
+            "Inputs": "Quality benchmarks and examples",
+            "Example": "Benchmarks deliverables against standards clearly"
+        },
+        "Timeliness_Score": {
+            "Purpose": "Monitors deadlines and completion rates",
+            "Inputs": "Time taken for task completion",
+            "Example": "Highlights delays for management clearly"
+        },
+        "Contribution_to_Outcome_Ratio": {
+            "Purpose": "Connects outputs to business impact",
+            "Inputs": "Tasks with highest time and energy investment",
+            "Example": "Maps deliverables to impact clearly"
+        },
+        "Redundancy_Detector": {
+            "Purpose": "Highlights duplicated tasks across members",
+            "Inputs": "Core task list and responsibilities",
+            "Example": "Alerts on duplicated resources clearly"
+        },
+        "Intervention_Prompter": {
+            "Purpose": "Suggests director intervention",
+            "Inputs": "Signs of being stuck or overwhelmed",
+            "Example": "Recommends timely director involvement clearly"
+        },
+        "Trend_Synthesizer": {
+            "Purpose": "Detects patterns in output or behavior",
+            "Inputs": "Frequently changing role aspects",
+            "Example": "Presents strategic trends clearly"
+        },
+        "Slide_Report_Auto_Curator": {
+            "Purpose": "Generates decks from team data",
+            "Inputs": "Recent project data and types",
+            "Example": "Auto-generates director\u2019s presentation materials clearly"
+        }
+    },
+    "Tier_3_Systemic_Integration": {
+        "Scenario_Simulation_Tool": {
+            "Purpose": "Forecasts outcomes for various scenarios",
+            "Inputs": "Common evaluation scenarios",
+            "Example": "Simulates scenarios for informed decisions clearly"
+        },
+        "Cross_Function_Insight_Relay": {
+            "Purpose": "Bridges insights between departments",
+            "Inputs": "Regular interactions with departments",
+            "Example": "Facilitates cross-departmental insight clearly"
+        },
+        "KPI_Visibility_Connector": {
+            "Purpose": "Links team efforts to executive OKRs",
+            "Inputs": "KPIs or OKRs responsibility details",
+            "Example": "Aligns team outputs to executive metrics clearly"
+        },
+        "Compliance_Data_Governance": {
+            "Purpose": "Maintains data integrity and avoids risk",
+            "Inputs": "Types of sensitive data handled",
+            "Example": "Protects from breaches and ensures compliance clearly"
+        }
+    }
+}

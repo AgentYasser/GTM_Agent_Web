@@ -1,0 +1,30 @@
+{
+    "Tier1A_Empower": {
+        "Role_Specific_Functions": "Director of GTM - Focused on B2B strategy, cross-functional growth, and GTM alignment across marketing, events, and partnerships.",
+        "Interdependency_Map": "Regularly works with marketing leads, strategy heads, partnership managers, and regional sales teams.",
+        "Performance_Boosters": "Bottlenecks in approvals and misalignment across silos; needs agile input tools and alignment sessions to streamline priorities.",
+        "Alignment_Tracker": "Driving adoption for new digital products and optimizing B2B campaign effectiveness across UAE.",
+        "Insight_Generator": "Recent high-performing campaigns, LinkedIn engagement strategy, AI agent pilots, and event success tracking."
+    },
+    "Tier1B_Behavior": {
+        "Working_Style_Profile": "Highly structured but needs buffer time due to unpredictable leadership demands. Prefers phased delivery with milestones.",
+        "Communication_Style": "Direct, concise, and prefers logical progression. Tolerates candor if grounded in intent.",
+        "Motivational_Drivers": "Clarity of impact, strategic ownership, and visible influence on direction. Appreciates recognition rooted in merit.",
+        "Stress_Signals": "Short temper triggered by executive interference or inefficiency. Manages it through self-awareness and humor.",
+        "Decision_Making_Approach": "Data and structure first, but increasingly open to gut and people insight. Needs alignment before commitment.",
+        "Autonomy_Preference": "Prefers autonomy but expects reciprocal support. Finds micromanagement insulting unless justified."
+    },
+    "Tier2_InsightOpt": {
+        "Strategic_Alignment_Index": "Key KPIs include campaign effectiveness, market penetration, lead gen from events, and B2B account expansion.",
+        "Output_Quality_Score": "Quality means strategic clarity, measurable performance, and stakeholder validation. Often exceeds expectations under pressure.",
+        "Timeliness_Score": "Timely under normal conditions but affected by leadership volatility. Strong under pressure if empowered.",
+        "Contribution_to_Outcome_Ratio": "Focus on long-form strategy decks, cross-functional collaboration, event conversion metrics, and performance planning.",
+        "Redundancy_Detector": "Owns strategic tasks but occasionally overlaps with comms or product leads; seeks clearer lane definitions."
+    },
+    "Tier3_Systemic": {
+        "Scenario_Simulation_Tool": "Simulates partner integration outcomes, budget variations, and stakeholder buy-in scenarios before launch.",
+        "Cross_Function_Insight_Relay": "Interfaces with strategy, marketing, comms, product, partnerships, and sales across UAE sectors.",
+        "KPI_Visibility_Connector": "Contributes to marketing effectiveness, product adoption, event conversion, and brand equity KPIs.",
+        "Compliance_Data_Governance": "Handles campaign data, strategic frameworks, stakeholder decks, and internal sensitive discussions."
+    }
+}

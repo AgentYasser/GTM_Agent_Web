@@ -98,9 +98,7 @@ elif mode == "Natural-Language Query":
             'alignment': 'Alignment_Tracker'
             
 elif mode == "Chat with GTM Agent":
-    # Input area for free-text GTM questions
     prompt = st.text_area("Ask anything about GTM:")
-    # Only show button when there's text
     if prompt and st.button("Send to AI"):
         with st.spinner("Thinking…"):
             resp = openai.ChatCompletion.create(
@@ -110,8 +108,8 @@ elif mode == "Chat with GTM Agent":
                         "role": "system",
                         "content": (
                             "You are a GTM AI assistant. "
-                            "Context: here are GTM variables and purposes:\n"
-                            f"{json.dumps(gtm_data, indent=2)}"
+                            "Context: GTM variables and purposes:\n"
+                            + json.dumps(gtm_data, indent=2)
                         )
                     },
                     {"role": "user", "content": prompt}
@@ -123,16 +121,4 @@ elif mode == "Chat with GTM Agent":
         st.markdown("**AI Answer:**")
         st.write(answer)
 
-        }
-        var = next((v for k, v in keywords.items() if k in query.lower()), None)
-        if var:
-            tier = next(t for t, vars in gtm_data.items() if var in vars)
-            result = get_gtm_variable_details(gtm_data, config, runtime, tier, var)
-            st.write(f"**Mapped to:** {tier} → {var}")
-            for k, v in result.items():
-                st.write(f"**{k}:** {v}")
-        else:
-            st.error("Could not map your question to a variable.")
 
-st.sidebar.markdown("---")
-st.sidebar.write("Built with ❤️ using Streamlit")

@@ -1,7 +1,7 @@
 streamlit
-pandas
-matplotlib
-openai==0.28.1
+torch              # if using CPU PyTorch backend
+transformers
+
 
 
 

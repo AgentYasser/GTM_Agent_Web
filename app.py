@@ -4,6 +4,9 @@ import os
 import csv
 import datetime
 import matplotlib.pyplot as plt
+import openai
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
 
 from agent_core import (
     personalize_output,

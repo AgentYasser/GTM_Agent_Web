@@ -5,6 +5,7 @@ import os
 # OpenAI import
 import openai
 openai.api_key = os.getenv("OPENAI_API_KEY")
+st.sidebar.write("🔑 API Key set:", "**yes**" if openai.api_key else "**no**")
 
 # Core functions
 from agent_core import get_gtm_variable_details
@@ -29,7 +30,7 @@ st.header("💬 Chat with GTM Agent")
 prompt = st.text_area("Ask anything about GTM:", height=150)
 if st.button("Send to AI"):
     if not openai.api_key:
-        st.error("OPENAI_API_KEY not set. Please add it in Streamlit Secrets.")
+st.sidebar.write("🔑 API Key set:", "**yes**" if openai.api_key else "**no**")        st.error("OPENAI_API_KEY not set. Please add it in Streamlit Secrets.")
     else:
         with st.spinner("Thinking..."):
             response = openai.ChatCompletion.create(
